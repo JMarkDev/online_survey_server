@@ -35,7 +35,7 @@ server.listen(PORT, () => {
     .then(() => {
       console.log("Connected to database");
       // Sync models after authentication
-      return database.sync({ force: true }); // Use { force: true } during development to drop and recreate tables
+      return database.sync({ force: false }); // Use { force: true } during development to drop and recreate tables
     })
     .then(() => {
       console.log("Models synced successfully");
