@@ -31,7 +31,7 @@ server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
   database.authenticate();
   database
-    .sync({ force: true }) // Use { force: true } during development to drop and recreate tables
+    .sync({ force: false }) // Use { force: true } during development to drop and recreate tables
     .then(() => {
       console.log("Connected to database");
     })
