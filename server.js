@@ -29,16 +29,11 @@ app.use(
 
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-  // Assuming `database` is your Sequelize instance
+  database.authenticate();
   database
-    .authenticate()
+    .sync({ force: true }) // Use { force: true } during development to drop and recreate tables
     .then(() => {
       console.log("Connected to database");
-      // Sync models after authentication
-      return database.sync({ force: false }); // Use { force: true } during development to drop and recreate tables
-    })
-    .then(() => {
-      console.log("Models synced successfully");
     })
     .catch((error) => {
       console.error("Unable to connect to the database:", error);
