@@ -60,7 +60,16 @@ const getSurveyById = async (req, res) => {
 
 const getAllTotalResponses = async (req, res) => {
   const { year } = req.params;
-  const course = ["BSCS", "BSED", "BSSW", "BSPOLSCIE", "BSCRIM"];
+   const course = [
+    "ACT",
+    "BSCS",
+    "BSED",
+    "BEED",
+    "BSSW",
+    "BSPOLSCIE",
+    "BSCRIM",
+    "AB FIL",
+  ];
   const months = [
     "Jan",
     "Feb",
